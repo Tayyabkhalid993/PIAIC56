@@ -1,0 +1,20 @@
+{
+  "name": "sirziaassignment45questions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "showing_name.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^9.2.16",
+    "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/prompt-sync": "^4.2.3"
+  }
+}
