@@ -43,7 +43,7 @@ if(number1 && number2 && operator){
     else if(operator === "division"){
       result = number1 /number2;
     }
-    console.log(chalk.green.bold(result));
+    console.log(chalk.green.bold(`Answer = ${result}`));
 }
 else
 {
