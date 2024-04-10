@@ -1,6 +1,6 @@
 {
   "name": "number_guessing_game_tayyabk993",
-  "version": "1.0.5",
+  "version": "1.0.1",
   "description": "",
   "main": "guessing_game.js",
   "type": "module",

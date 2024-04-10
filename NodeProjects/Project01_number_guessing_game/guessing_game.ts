@@ -6,7 +6,7 @@ import chalk from 'chalk';
 
 const randomNumber = Math.floor((Math.random()*10)+1);
 
-console.log(randomNumber);
+// console.log(randomNumber);
 
 let guess : boolean = false;
 

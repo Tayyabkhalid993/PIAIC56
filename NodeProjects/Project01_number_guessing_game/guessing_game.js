@@ -2,7 +2,7 @@
 import inquirer from 'inquirer';
 import chalk from 'chalk';
 const randomNumber = Math.floor((Math.random() * 10) + 1);
-console.log(randomNumber);
+// console.log(randomNumber);
 let guess = false;
 while (!guess) {
     const answer = await inquirer.prompt([
