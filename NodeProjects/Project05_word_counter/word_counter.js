@@ -12,3 +12,4 @@ const answer = await inquirer.prompt([
 //split() is remove the from the sentence.
 const word = answer.sentence.trim().split(" ");
 console.log(word);
+console.log(`Your sentence or paragraph are consist of ${word.length} words`);

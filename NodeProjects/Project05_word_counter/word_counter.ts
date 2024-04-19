@@ -21,3 +21,6 @@ const word = answer.sentence.trim().split(" ");
 
 console.log(word);
 
+console.log(chalk.bold.green(`Your sentence or paragraph are consist of ${word.length} words`));
+
+
