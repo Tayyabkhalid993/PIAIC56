@@ -28,7 +28,7 @@ const answer = await inquirer.prompt([
     {
         type: 'number',
         name: 'amount',
-        message: 'Enter amount in'
+        message: 'Enter amount : '
     }
 ]);
 let from_amount = currency[answer.from_currency];
