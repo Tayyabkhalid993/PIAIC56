@@ -15,16 +15,16 @@ for each number. Your output should read "1st 2nd 3rd 4th 5th 6th 7th 8th
 let numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 for (let i = 0; i < numbersArray.length; i++) {
     if (numbersArray[i] === 1) {
-        console.log(numbersArray[i] + "st");
+        console.log(numbersArray[i] + "st\n");
     }
     else if (numbersArray[i] === 2) {
-        console.log(`${numbersArray[i]}nd`);
+        console.log(`${numbersArray[i]}nd\n`);
     }
     else if (numbersArray[i] === 3) {
-        console.log(numbersArray[i] + 'rd');
+        console.log(numbersArray[i] + 'rd\n');
     }
     else {
-        console.log(numbersArray[i] + 'th');
+        console.log(numbersArray[i] + 'th\n');
     }
 }
 export {};

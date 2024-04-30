@@ -17,15 +17,15 @@ let numbersArray : number[] = [1,2,3,4,5,6,7,8,9,10];
 
 for(let i = 0; i<numbersArray.length; i++){
     if(numbersArray[i]===1){
-        console.log(numbersArray[i] + "st")
+        console.log(numbersArray[i] + "st\n")
     }
     else if(numbersArray[i]===2){
-        console.log(`${numbersArray[i]}nd`)
+        console.log(`${numbersArray[i]}nd\n`)
     }
     else if(numbersArray[i]===3){
-        console.log(numbersArray[i]+'rd')
+        console.log(numbersArray[i]+'rd\n')
     }
     else {
-        console.log(numbersArray[i]+'th')
+        console.log(numbersArray[i]+'th\n')
     }
 }

@@ -8,7 +8,7 @@ const atm = await inquirer.prompt([
     {
         type: 'list',
         name: 'login',
-        message: 'Choose an option from given blow :',
+        message: 'Choose an option from given below :',
         choices: ['Sign in', 'Sign up']
     }
 ]);
