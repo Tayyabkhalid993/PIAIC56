@@ -1,6 +1,6 @@
 {
-  "name": "rock_paper_scissor",
-  "version": "1.0.0",
+  "name": "rock_paper_scissor_tayyabk993",
+  "version": "1.0.1",
   "main": "index.js",
   "type": "module",
   "bin": "rock_paper_scissor.js",
