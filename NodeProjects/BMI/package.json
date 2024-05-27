@@ -1,6 +1,6 @@
 {
   "name": "bmi_tayyabk993",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "bmi.js",
   "type": "module",
   "bin": "bmi.js",
