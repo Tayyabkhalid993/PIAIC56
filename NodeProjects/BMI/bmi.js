@@ -21,7 +21,7 @@ let bmi = weight.weightInKilograms / (height.heightInMeters ** 2);
 bmi = Math.floor(bmi);
 console.log(`BMI = ${bmi}`);
 if (bmi < 18) {
-    console.log(chalk.bold.yellow("Sorry! You're under"));
+    console.log(chalk.bold.yellow("Sorry! You're underweight"));
 }
 else if (bmi > 17 && bmi < 26) {
     console.log(chalk.bold.green("Congratulation!, You're healthy"));
