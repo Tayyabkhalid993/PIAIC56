@@ -10,21 +10,24 @@ to each magician’s name.
 */
 
 
+let magicians: string[] = ["neil patrick","penn jillette","harry houdini"];
 
+let updatedArray:string[] = []; 
 
-// let magicians: string[] = ["Alice", "David", "Chris"];
+let make_great = (magicians:string[])=> {
 
-// function make_great(magicians: string[]): string[] {
-//     let greatMagicians :string[] = [];
-//     magicians.forEach(magician => {
-//         greatMagicians.push(`${magician} the Great`);
-//     });
-//     return greatMagicians;
-// }
+magicians.map((item)=>{
 
-// let greatMagicians = make_great(magicians.slice()); // Creates a new modified array
-// console.log("Original magicians:");
-// show_magicians(magicians); // Shows original names
-// console.log("Great magicians:");
-// show_magicians(greatMagicians); // Shows modified names
+    updatedArray.push(`The great ${item}`);
+})
+};
 
+make_great(magicians); // Calling function
+
+console.log("\nOriginal Array");
+
+console.log(magicians); // Original Array
+
+console.log("\nNew Updated Array");
+
+console.log(updatedArray) // New Updated Array

@@ -7,3 +7,13 @@ the function three times, using a different number of arguments each time.
 
 */
 
+
+let sandwich : string[] = []; 
+
+let order = (...arg1:string[]) => {
+console.log(`Make sandwich with : ${arg1.join(', ')}`)
+}
+
+order("ham", "cheese");
+order("turkey", "lettuce", "tomato");
+order("avocado", "sprouts", "mustard", "mayo");
