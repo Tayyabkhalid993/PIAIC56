@@ -1,74 +1,128 @@
-"use client";
-
+"use client"
 import Link from "next/link";
-import MenuIcon from "@mui/icons-material/Menu";
-import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import XIcon from "@mui/icons-material/X";
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
-
-
-//scroll sections
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header navbar Link');
-
-window.onscroll = () =>{
-sections.forEach ((sec)=> {
-  let top = window.scrollY;
-  let offset = sec.offsetTop - 100;
-  let height = sec.offsetHeight;
-  let id = sec.getAttribute('id');
-
-
-  if(top >= offset && top < offset + height){
-    //active.navbar links
-    navLinks.forEach(links =>{
-      links.classList.remove('active');
-      document.querySelector('header navbar Link[href*=' + id + ']')?.classList.add('active')
-    })
-  }
-})
-  
-
-
-
-  //sticky header
-  let header = document.querySelector('header');
-
-  header?.classList.toggle('sticky', window.scrollY > 100);
-}
-
-
-
-
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import { Menu } from "lucide-react";
+import { useState } from "react";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 export default function Home() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
   return (
     <main>
       {/* ---------header------------ */}
-
-      <header className="header">
-        <Link className="logo" href={"#home"}>
-          Tayyab.
-        </Link>
-
-        {/* <MenuIcon className="menu-icon" /> */}
-
-        <nav className="navbar">
-          <Link className="active" href={"#home"}>
-            Home
+     <header className={`header flex justify-end items-center transition-opacity duration-300 ${isSidebarOpen ? "opacity-50" : "opacity-100"}`}>
+        <div>
+          <Link href={"#home"} className="logo ">
+            Tayyab.
           </Link>
-          <Link href={"#about"}>About</Link>
-          <Link href={"#project"}>Project</Link>
-          <Link href={"#skills"}>Skills</Link>
-          <Link href={"#contact"}>Contact</Link>
+        </div>
+        <nav className="navbar">
+          <Sheet open={isSidebarOpen} onOpenChange={setIsSidebarOpen}>
+            <SheetTrigger className="tablet:hidden">
+              <Menu className="menu-icon mr-4" />
+            </SheetTrigger>
+            <SheetContent className="pt-4 text-3xl">
+              <br />
+              <br />
+              <br />
+              <Link href={"#home"} onClick={closeSidebar}>
+                Home
+              </Link>
+              <br />
+              <br />
+              <br />
+              <Link href={"#about"} onClick={closeSidebar}>
+                About
+              </Link>
+              <br />
+              <br />
+              <br />
+              <Link href={"#education"} onClick={closeSidebar}>
+                Project
+              </Link>
+              <br />
+              <br />
+              <br />
+              <Link href={"#skills"} onClick={closeSidebar}>
+                Skills
+              </Link>
+              <br />
+              <br />
+              <br />
+              <Link href={"#contact"} onClick={closeSidebar}>
+                Contact
+              </Link>
+              <br />
+            </SheetContent>
+          </Sheet>
+          <ul className="hidden tablet:flex gap-x-8 text-[1.7rem]">
+            <li>
+              <Link
+                className="text-[var(--text-color)] font-bold ml-[3.5rem] transition duration-300 hover:text-[var(--main-color)] 
+active:text-[var(--main-color)]"
+                href={"#home"}
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-[var(--text-color)] font-bold ml-[3.5rem] transition duration-300 hover:text-[var(--main-color)] 
+active:text-[var(--main-color)]"
+                href={"#about"}
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-[var(--text-color)] font-bold ml-[3.5rem] transition duration-300 hover:text-[var(--main-color)] 
+active:text-[var(--main-color)]"
+                href={"#education"}
+              >
+                Project
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-[var(--text-color)] font-bold ml-[3.5rem] transition duration-300 hover:text-[var(--main-color)] 
+active:text-[var(--main-color)]"
+                href={"#skills"}
+              >
+                Skills
+              </Link>{" "}
+            </li>
+            <li>
+              <Link
+                className="text-[var(--text-color)] font-bold ml-[3.5rem] transition duration-300 hover:text-[var(--main-color)] 
+active:text-[var(--main-color)]"
+                href={"#contact"}
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
         </nav>
       </header>
 
       {/*-------------- home section-------------- */}
 
-      <section className="home" id="home">
+      <section className={`home transition-opacity duration-300 ${isSidebarOpen ? "opacity-50" : "opacity-100"}`} id="home">
         <div className="home-content">
           <h1>
             Hi, I'm<span> Muhammad Tayyab Khalid</span>{" "}
@@ -86,26 +140,46 @@ export default function Home() {
           </p>
 
           <div className="btn-box">
-            <Link href={"#"} className="btn">
+            <Link
+              href={
+                "https://www.linkedin.com/in/muhammad-tayyab-khalid-tayyabk993"
+              }
+              className="btn" target="_blank"
+            >
               Hire me
             </Link>
-            <Link href={"#"} className="btn">
+            <Link
+              href={
+                "https://www.linkedin.com/in/muhammad-tayyab-khalid-tayyabk993"
+              }
+              className="btn" target="_blank"
+            >
               Let's talk
             </Link>
           </div>
           <div className="flex-space-x-4 home-sci">
-            <a href={"#"} className="bx-bx1-facebook">
-              <FacebookIcon className="icon" sx={{ fontSize: 25 }} />
-            </a>
-            <a href={"#"} className="bx-bx1-linkedin">
+            <Link
+              href="https://www.linkedin.com/in/muhammad-tayyab-khalid-tayyabk993"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bx-bx1-linkedin"
+            >
               <LinkedInIcon className="icon" sx={{ fontSize: 25 }} />
-            </a>
-            <a href={"#"} className="bx-bx1-github">
+            </Link>
+            <Link
+              href={"https://github.com/tayyabkhalid993"}
+              target="_blank"
+              className="bx-bx1-github"
+            >
               <GitHubIcon className="icon" sx={{ fontSize: 25 }} />
-            </a>
-            <a href={"#"} className="bx-bx1-x">
+            </Link>
+            <Link
+              href={"https://x.com/TayyabK993?t=Me6-ULEimqiZR6jBTWGOwQ&s=09"}
+              target="_blank"
+              className="bx-bx1-x"
+            >
               <XIcon className="icon" sx={{ fontSize: 25 }} />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -119,8 +193,12 @@ export default function Home() {
           About <span>Me</span>
         </h2>
 
-        <div className="about-image">
-          <img width={"250px"} src="./SmallSizeImge.jpg" alt="Image" />
+        <div className=" about-image ">
+          {/* <div style={{borderRadius:"50%", overflow:'hidden'}} className=""> */}
+          {/* <Image src={myImage} alt="Image"></Image> */}
+
+          <img src="./SmallSizeImge.jpg" alt="" />
+
           <span className="circle-spin"></span>
         </div>
         <div className="about-content">
@@ -135,23 +213,171 @@ export default function Home() {
           </p>
 
           <div className="btn-box btns">
-            <a href="#" className="btn">
+            <a href="#about" className="btn">
               Read More
             </a>
           </div>
         </div>
       </section>
 
-      {/* -------------skill section------------- */}
+      {/* -----------------------project section--------------------------- */}
+
+      <section className="education" id="education">
+        <h2 className="heading">
+          My <span>Projects </span>
+        </h2>
+
+        <div className="education-row">
+          <div className="education-column">
+            {/* <h3 className="title">Education</h3> */}
+
+            <div className="education-box">
+              <div className="education-content">
+                <div className="content">
+                  <div className="year">
+                    <h3>BMI Calculator</h3>
+                  </div>
+                  <p>
+                    The BMI Calculator is a TypeScript-based CLI tool that
+                    calculates Body Mass Index (BMI) using user inputs for
+                    height and weight. It provides health status feedback
+                    (Underweight, Healthy, Overweight) with color-coded results
+                    using Chalk, and features an interactive interface with
+                    Inquirer.
+                    <Link
+                      href="https://github.com/Tayyabkhalid993/PIAIC56/tree/main/NodeProjects/BMI"
+                      className="text-blue-500 hover:underline ml-2"
+                      target="_blank"
+                    >
+                      Read More
+                    </Link>
+                  </p>
+                </div>
+              </div>
+
+              <div className="education-content">
+                <div className="content">
+                  <div className="year">
+                    <h3>Rock-Paper-Scissors</h3>
+                  </div>
+                  <p>
+                    A classic Rock-Paper-Scissors game. It allows players to
+                    enter their name, choose between rock, paper, and scissors,
+                    and then compares their choice to a computer's random
+                    selection. The game displays the winner and offers the
+                    option to play again.
+                    <Link
+                      href="https://github.com/Tayyabkhalid993/PIAIC56/tree/main/NodeProjects/Other_Projects/Rock_Paper_sessior"
+                      className="text-blue-500 
+                      hover:underline ml-2"
+                      target="_blank"
+                    >
+                      Read More
+                    </Link>
+                  </p>
+                </div>
+              </div>
+
+              <div className="education-content">
+                <div className="content">
+                  <div className="year">
+                    <h3>Number Guessing Game</h3>
+                  </div>
+                  <p>
+                  A number guessing game. Computer generate a random number.
+                  Then user is prompted to guess a randomly generated number between 1 and 10. If the guess is correct, the game ends with a congratulatory message. If the guess is incorrect, the user is provided with feedback (too high or too low) and allowed to try again until they guess correctly.
+                    <Link
+                      href="https://github.com/Tayyabkhalid993/PIAIC56/tree/main/NodeProjects/Project01_number_guessing_game"
+                      className="text-blue-500 hover:underline ml-2"
+                      target="_blank"
+                    >
+                      Read More
+                    </Link>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* --------------2nd column----------- */}
+
+          <div className="education-column">
+            {/* <h3 className="title">Experience</h3> */}
+            <div className="education-box">
+              <div className="education-content">
+                <div className="content">
+                  <div className="year">
+                    <h3>ATM</h3>
+                  </div>
+                  <p>
+                  This TypeScript code simulates a simple ATM with a command-line interface (CLI).
+                  Users can choose to "Sign in" using predefined credentials. Upon successful login, they can check their balance, withdraw cash (limited by available funds), or choose pre-defined "Fast cash" amounts. The program uses inquirer for user prompts and chalk for colored output.
+                    <Link
+                      href="https://github.com/Tayyabkhalid993/PIAIC56/tree/main/NodeProjects/Project02_ATM"
+                      className="text-blue-500 
+                      hover:underline ml-2"
+                      target="_blank"
+                    >
+                      Read More
+                    </Link>
+                  </p>
+                </div>
+              </div>
+
+              <div className="education-content">
+                <div className="content">
+                  <div className="year">
+                    <h3>To-Do List</h3>
+                  </div>
+                  <p>
+                  A simple to-do list application.
+                  Users are prompted to enter tasks, which are added to a list. The program continues to ask for more tasks until the user confirms they are finished. Finally, the completed to-do list is displayed.
+                    <Link
+                      href="https://github.com/Tayyabkhalid993/PIAIC56/tree/main/NodeProjects/Project03_toDoList"
+                      className="text-blue-500 
+                       hover:underline ml-2"
+                      target="_blank"
+                    >
+                      Read More
+                    </Link>
+                  </p>
+                </div>
+              </div>
+
+              <div className="education-content">
+                <div className="content">
+                  <div className="year">
+                    <h3>Currency Converter</h3>
+                  </div>
+                  <p>
+                  A currency converter with a user-friendly. Users can select the currency they want to convert from and to,
+                  as well as enter the amount. The program utilizes a defined exchange rate object to calculate the equivalent amount in the desired currency. Finally, it displays the converted amount with clear formatting.
+                    <Link
+                      href="https://github.com/Tayyabkhalid993/PIAIC56/tree/main/NodeProjects/Other_Projects/Rock_Paper_sessior"
+                      className="text-blue-500 
+                       hover:underline ml-2"
+                      target="_blank"
+                    >
+                      Read More
+                    </Link>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* -----------------------skill section--------------------------- */}
       <section className="skills" id="skills">
         <h2 className="heading">
           {" "}
           My <span>Skills</span>
         </h2>
+            <h3 className="skill-title">Coding Skills</h3>
 
         <div className="skills-row">
           <div className="skills-column">
-            <h3 className="title">Coding Skills</h3>
 
             <div className="skills-box">
               <div className="skills-content">
@@ -173,7 +399,7 @@ export default function Home() {
                 </div>
                 <div className="progress">
                   <h3>
-                    TypeScript <span>82%</span>
+                    TypeScript <span>92%</span>
                   </h3>
                   <div className="bar">
                     <span></span>
@@ -187,14 +413,9 @@ export default function Home() {
                     <span></span>
                   </div>
                 </div>
-                <div className="progress">
-                  <h3>
-                    Next.JS <span>85%</span>
-                  </h3>
                   <div className="bar">
                     <span></span>
                   </div>
-                </div>
               </div>
             </div>
           </div>
@@ -202,12 +423,12 @@ export default function Home() {
           {/* ----------------------For another Column--------------------------- */}
 
           <div className="skills-column">
-            <h3 className="title">Professional Skills</h3>
+            {/* <h3 className="title">Professional Skills</h3> */}
             <div className="skills-box">
               <div className="skills-content">
                 <div className="progress">
                   <h3>
-                    Web Design <span>95%</span>
+                  Next.JS <span>95%</span>
                   </h3>
                   <div className="bar">
                     <span></span>
@@ -215,7 +436,7 @@ export default function Home() {
                 </div>
                 <div className="progress">
                   <h3>
-                    Web Development <span>75%</span>
+                    Tailwind CSS <span>85%</span>
                   </h3>
                   <div className="bar">
                     <span></span>
@@ -223,7 +444,7 @@ export default function Home() {
                 </div>
                 <div className="progress">
                   <h3>
-                    Microsoft Office <span>82%</span>
+                    Express <span>82%</span>
                   </h3>
                   <div className="bar">
                     <span></span>
@@ -231,19 +452,14 @@ export default function Home() {
                 </div>
                 <div className="progress">
                   <h3>
-                    Python <span>83%</span>
+                  Node Js <span>83%</span>
                   </h3>
                   <div className="bar">
                     <span></span>
                   </div>
                 </div>
-                <div className="progress">
-                  <h3>
-                    SEO Marketing <span>85%</span>
-                  </h3>
                   <div className="bar">
                     <span></span>
-                  </div>
                 </div>
               </div>
             </div>
@@ -251,7 +467,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contact" id="contact"><center></center>
+      <section className="contact" id="contact">
+        <center></center>
         <h2 className="heading">
           Contact <span>Me!</span>
         </h2>
@@ -279,12 +496,19 @@ export default function Home() {
             </div>
           </div>
           <div className="textarea-field">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Your Message"
+              required
+            ></textarea>
             <span className="focus"></span>
           </div>
 
           <div className="btn-box btns">
-            <a href="#" className="btn">
+            <a href="#contact" className="btn">
               Submit
             </a>
           </div>
@@ -304,12 +528,6 @@ export default function Home() {
           </a>
         </div>
       </footer>
-
-
-
-
-
-
     </main>
   );
 }
