@@ -80,7 +80,6 @@ section {
   display: flex;
   align-items: center;
   padding: 0 9%;
-  background: url('../../public/fullSizeImge1.jpg') no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -745,6 +744,10 @@ span {
 @media (max-width: 580px) {
   html {
     font-size: 50%;
+  }
+
+  .home{
+    background-image: none;
   }
 
   .home-content h1 {

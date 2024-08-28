@@ -122,7 +122,7 @@ active:text-[var(--main-color)]"
 
       {/*-------------- home section-------------- */}
 
-      <section className={`home transition-opacity duration-300 ${isSidebarOpen ? "opacity-50" : "opacity-100"}`} id="home">
+      <section className={`home bg-[url('../../public/fullSizeImge1.jpg')] bg-cover bg-center transition-opacity duration-300 ${isSidebarOpen ? "opacity-50" : "opacity-100"}`} id="home">
         <div className="home-content">
           <h1>
             Hi, I'm<span> Muhammad Tayyab Khalid</span>{" "}
