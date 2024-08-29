@@ -1,5 +1,6 @@
 "use client"
 import Link from "next/link";
+import Image from "next/image";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import XIcon from "@mui/icons-material/X";
@@ -192,15 +193,18 @@ active:text-[var(--main-color)]"
         <h2 className="heading">
           About <span>Me</span>
         </h2>
+            
+        <div className="about-image relative w-[25rem] h-[25rem] rounded-full flex justify-center items-center">
+      <Image
+        src="/SmallSizeImge.jpg" 
+        alt="Profile Image"
+        width={225}
+        height={225}
+        className="Image rounded-full border-[.2rem] border-[var(--main-color)]"
+      />
+      <span className="circle-spin absolute"></span>
+    </div>
 
-        <div className=" about-image ">
-          {/* <div style={{borderRadius:"50%", overflow:'hidden'}} className=""> */}
-          {/* <Image src={myImage} alt="Image"></Image> */}
-
-          <img src="./SmallSizeImge.jpg" alt="" />
-
-          <span className="circle-spin"></span>
-        </div>
         <div className="about-content">
           <h2>Full Stack Developer</h2>
           <p className="about-para">

@@ -281,7 +281,7 @@ section {
 span {
   color: var(--main-color);
 }
-
+/*  */
 .about-image {
   position: relative;
   width: 25rem;
@@ -292,7 +292,7 @@ span {
   align-items: center;
 }
 
-.about-image img {
+.about-image Image {
   width: 90%;
   border-radius: 50%;
   border: .2rem solid var(--main-color);
