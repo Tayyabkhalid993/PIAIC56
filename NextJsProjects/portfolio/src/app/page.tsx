@@ -527,9 +527,9 @@ active:text-[var(--main-color)]"
         </div>
 
         <div className="footer-iconTop">
-          <a href={"#"} className=" bg-cyan-500 bx-bx1-arrowUpWardIcon">
+          <Link href={"#"} className=" bg-cyan-500 bx-bx1-arrowUpWardIcon">
             <ArrowUpwardIcon className="icon" sx={{ fontSize: 25 }} />
-          </a>
+          </Link>
         </div>
       </footer>
     </main>
