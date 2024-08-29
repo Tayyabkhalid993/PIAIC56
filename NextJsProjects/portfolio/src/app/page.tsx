@@ -503,8 +503,8 @@ active:text-[var(--main-color)]"
             <textarea
               name=""
               id=""
-              cols="30"
-              rows="10"
+              cols={30}
+              rows={10}
               placeholder="Your Message"
               required
             ></textarea>
