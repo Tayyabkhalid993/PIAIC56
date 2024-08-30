@@ -34,7 +34,7 @@ body {
 }
 
 .header {
-  position:fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -140,7 +140,7 @@ section {
 }
 
 .btn-box .btn {
-  /*done*/
+  
   position: relative;
   display: inline-flex;
   justify-content: center;
@@ -159,7 +159,7 @@ section {
 }
 
 .btn-box .btn::before {
-  /*done*/
+  
   content: '';
   position: absolute;
   top: 0;
@@ -172,36 +172,37 @@ section {
 }
 
 .btn-box .btn:hover::before {
-  /*done*/
+  
   width: 100%;
 }
 
 .btn-box .btn:nth-child(2) {
-  /*done*/
-  /*done*/
+  
   background: transparent;
   color: var(--main-color);
 }
 
 .btn-box .btn:nth-child(2)::before {
-  /*done*/
+  
   background: var(--main-color);
 }
 
 .btn-box .btn:nth-child(2):hover {
-  /*done*/
+  
   color: var(--bg-color);
 }
 
 .btn-box .btn:hover {
-  /*done*/
+  
   color: var(--main-color);
 }
 
 .home-sci {
-  position: absolute;
-  bottom: 4rem;
-  width: 170px;
+  position: static;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  bottom: 2rem;
+  width: 180px;
   display: flex;
   justify-content: space-between;
 }
@@ -248,10 +249,10 @@ section {
 
 .home-imgHover {
   position: absolute;
-  top: 0;
+  top: 15rem;
   right: 0;
   width: 45%;
-  height: 100%;
+  height: 88%;
   background: transparent;
   transition: 3s;
 }
@@ -292,12 +293,11 @@ span {
   align-items: center;
 }
 
-.about-image Image {
+.about-image img {
   width: 90%;
   border-radius: 50%;
   border: .2rem solid var(--main-color);
 }
-
 
 .about-image .circle-spin {
   position: absolute;
@@ -678,14 +678,6 @@ span {
 /* --------------Responsiveness------------- */
 
 
-
-@media (max-width: 1200px) {
-  /* html { */
-    /* font-size: 55%; */
-  /* } */
-}
-
-
 @media (max-width: 1100px) {
   .header {
     padding: 2rem 4%;
@@ -741,7 +733,7 @@ span {
 }
 
 
-@media (max-width: 580px) {
+@media (max-width: 650px) {
   html {
     font-size: 50%;
   }
